@@ -79,6 +79,11 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+.bg-home{
+ background: #36204d;
+background: linear-gradient(0deg, rgba(54, 32, 77, 1) 0%, rgba(102, 51, 153, 1) 70%);
+}
+
 *,
 *::before,
 *::after {
