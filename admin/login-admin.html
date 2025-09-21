@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - Plataforma de Fidelización</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <title>Login - Administrador</title>
+        <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <script src="./js/db.js"></script>
-        <script src="./js/auth.js"></script>
+        <script src="../js/db.js"></script>
+        <script src="../js/auth-admin.js"></script>
     </head>
     <body class="bg-light">
         <nav class=" navbar navbar-expand navbar-dark bg-dark text-center text-light shadow ">
             <!-- Navbar Brand-->
-             <img width="5%" class="navbar-brand ps-3" src="./assets/img/Logo CoCreando.png" alt="Co Creando AC">
+             <img width="5%" class="navbar-brand ps-3" src="../assets/img/Logo CoCreando.png" alt="Co Creando AC">
             <!-- Navbar-->
             <h3>Plataforma de Fidelización</h3>
         </nav>
@@ -26,12 +26,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar Sesión</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar Sesión como Administrador</h3></div>
                                     <div class="card-body">
                                         <form>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="identifier" type="email" placeholder="Correo o ID de empleado" />
-                                                <label for="identifier">Correo Electrónico / ID de Colaborador</label>
+                                                <input class="form-control" id="identifieradmin" type="email" placeholder="Correo o ID de empleado" />
+                                                <label for="identifieradmin">Correo Electrónico / ID de Administrador</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="password" type="password" placeholder="Contraseña" />
@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="./password.html">¿Olvidó su Contraseña?</a>
-                                                 <button class="btn btn-primary" onclick="login(identifier.value, password.value)">Entrar</button>
+                                                 <button class="btn btn-primary" onclick="login(identifieradmin.value, password.value)">Entrar</button>
                                             </div>
                                         </form>
                                     </div>

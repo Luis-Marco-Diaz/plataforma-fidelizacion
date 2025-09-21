@@ -1,8 +1,9 @@
 // db.js - Modelo
 const DB = {
   users: [
-    { id: "E001", email: "empleado1@empresa.com", password: "12345", name: "Empleado Uno" },
-    { id: "E002", email: "empleado2@empresa.com", password: "12345", name: "Empleado Dos" }
+    { id: "E001", email: "empleado1@empresa.com", password: "12345@", name: "Empleado Uno" },
+    { id: "SUPP1", email: "proveedor@empresa.com", password: "12345@", name: "Proveedor Universal" },
+    { id: "ADMIN1", email: "admin1@empresa.com", password: "12345@", name: "Administrador Uno" }
   ],
   products: [
     { id: 1, name: "Producto A", price: 100 },
@@ -14,4 +15,12 @@ const DB = {
 
 function getUserByEmailOrId(identifier) {
   return DB.users.find(u => u.email === identifier || u.id === identifier);
+}
+
+function getUserByEmailOrId(identifieradmin) {
+  return DB.users.find(u => u.email === identifieradmin || u.id === identifieradmin);
+}
+
+function getUserByEmailOrId(identifiersupplier) {
+  return DB.users.find(u => u.email === identifiersupplier || u.id === identifiersupplier);
 }
