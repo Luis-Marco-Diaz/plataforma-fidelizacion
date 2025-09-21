@@ -99,6 +99,10 @@ background: linear-gradient(0deg, rgb(21, 21, 21) 0%, rgb(84, 84, 84) 70%);
  background: #010947;
 background: linear-gradient(0deg, rgb(6, 0, 91) 0%, rgb(0, 65, 163) 70%);
 }
+.bg-gifts{
+ background: #470145;
+background: linear-gradient(0deg, rgb(91, 0, 68) 0%, rgb(163, 0, 155) 70%);
+}
 
 *,
 *::before,

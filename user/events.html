@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Plataforma de Fidelización Co Creando</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/img/Logo CoCreando.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="../js/db.js"></script>
+        <script src="../js/auth.js"></script>
+        <style>
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+    .day {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      min-height: 70px;
+    }
+    .today {
+      background: #0d6efd;
+      color: #fff;
+      font-weight: bold;
+    }
+    .event {
+      background: #ffc107;
+      color: #000;
+      font-weight: bold;
+    }
+    .empty {
+      visibility: hidden;
+    }
+     /* Ajustes para pantallas muy pequeñas */
+    @media (max-width: 600px) {
+    .dias{
+        display: none;
+    }
+    
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+      .day {
+        font-size: 0.65rem;
+        padding: 6px 2px;
+        min-height: 40px;
+      }
+      .nav-controls h4 {
+        font-size: 1rem;
+      }
+      .nav-controls button {
+        flex: 1 1 auto;
+        font-size: 0.75rem;
+        padding: 6px;
+      }
+    }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!"><img width="80px" src="../assets/img/Logo CoCreando.png" alt="Logo Company"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="Shop.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="products.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="services.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="exp.html">Experiencias</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="events.html">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="gifts.html">Regalos</a></li>
+                    </ul>
+                    <!-- User-->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">Usuario Demo</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="user.html">Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="user.html#compras">Mis Compras</a></li>
+                                <button class="btn btn-warning m-2" onclick="logout()">Cerrar sesión</button>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                            </ul>
+                    </div>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Carrito
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-events py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h2 class="fw-bolder">Eventos Especiales</h2>
+                    <p class="lead fw-normal text-white-50 mb-0">Programa de Beneficios 2025</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container bg-light rounded shadow p-4 px-lg-5 mt-5">
+                 <div class="container">
+                 <h2 class="text-center mb-4">Calendario de Eventos</h2>
+                <h4 id="monthTitle" class="text-center py-2"></h4>
+    <!-- Controles de navegación -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button id="prevBtn" class="btn btn-outline-primary">Mes Anterior</button>
+      <button id="nextBtn" class="btn btn-outline-primary">Mes Siguiente</button>
+    </div>
+
+    <!-- Encabezados de días -->
+    <div class="calendar fw-bold text-center mb-2">
+      <div class="dias" >Lun</div>
+      <div class="dias" >Mar</div>
+      <div class="dias" >Mié</div>
+      <div class="dias" >Jue</div>
+      <div class="dias" >Vie</div>
+      <div class="dias" >Vie</div>
+      <div class="dias" >Sáb</div>
+      <div class="dias" >Dom</div>
+    </div>
+
+    <div id="calendar" class="calendar"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalle del Evento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="modalContent"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+            </div>
+        </section>
+         <!--Footer-->
+                <footer class="py-4 bg-dark mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-light">Copyright 2025 &copy; Co Creando la Innovación y Sustentabilidad AC</div>
+                            <div>
+                                <a class="text-light" href="#">Plataforma de Fidelización Co Creando AC</a>
+                                 &middot;
+                                <a class="text-light" href="#">Política de Privacidad</a>
+                                &middot;
+                                <a class="text-light" href="#">Términos y Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        <!-- Bootstrap core JS-->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
+         <script>
+    const calendarEl = document.getElementById("calendar");
+    const monthTitle = document.getElementById("monthTitle");
+    const today = new Date();
+
+    // Fecha inicial
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    // Límites de navegación (12 meses atrás y 12 adelante)
+    const minDate = new Date(today.getFullYear(), today.getMonth() - 12, 1);
+    const maxDate = new Date(today.getFullYear(), today.getMonth() + 12, 1);
+
+    // Eventos de ejemplo
+    const events = {
+      "2025-09-05": "Taller de Creación de esferas",
+      "2025-09-12": "Feria de las Manzanas",
+      "2025-09-21": "Concierto al aire libre",
+      "2025-10-03": "Rodada Noctura",
+      "2025-11-15": "Taller de lectura"
+    };
+
+    const monthNames = [
+      "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+      "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+    ];
+
+    function renderCalendar(month, year) {
+      calendarEl.innerHTML = "";
+
+      monthTitle.textContent = `${monthNames[month]} ${year}`;
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      // Ajuste para que empiece en lunes
+      const offset = (firstDay === 0 ? 6 : firstDay - 1);
+
+      for (let i = 0; i < offset; i++) {
+        const emptyCell = document.createElement("div");
+        emptyCell.classList.add("day", "empty");
+        calendarEl.appendChild(emptyCell);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateKey = `${year}-${String(month+1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const dayEl = document.createElement("div");
+        dayEl.classList.add("day");
+        dayEl.textContent = day;
+
+        // Día actual
+        if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+          dayEl.classList.add("today");
+        }
+
+        // Evento
+        if (events[dateKey]) {
+          dayEl.classList.add("event");
+          dayEl.addEventListener("click", () => {
+            document.getElementById("modalContent").textContent = events[dateKey];
+            const eventModal = new bootstrap.Modal(document.getElementById("eventModal"));
+            eventModal.show();
+          });
+        }
+
+        calendarEl.appendChild(dayEl);
+      }
+
+      // Desactivar botones cuando se llegue al límite
+      const prevDate = new Date(year, month - 1, 1);
+      const nextDate = new Date(year, month + 1, 1);
+
+      document.getElementById("prevBtn").disabled = prevDate < minDate;
+      document.getElementById("nextBtn").disabled = nextDate > maxDate;
+    }
+
+    // Navegación
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      if (currentMonth === 0) {
+        currentMonth = 11;
+        currentYear--;
+      } else {
+        currentMonth--;
+      }
+      renderCalendar(currentMonth, currentYear);
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      if (currentMonth === 11) {
+        currentMonth = 0;
+        currentYear++;
+      } else {
+        currentMonth++;
+      }
+      renderCalendar(currentMonth, currentYear);
+    });
+
+    // Render inicial
+    renderCalendar(currentMonth, currentYear);
+  </script>
+    </body>
+</html>

@@ -5,20 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>User Dashboard</title>
+        <title>Plataforma de Fidelización Co Creando</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../assets/img/Logo CoCreando.png" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="../js/db.js"></script>
+        <script src="../js/auth.js"></script>
         
     </head>
     <body>
        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!"><img width="80px" src="./assets/img/Logo CoCreando.png" alt="Logo Company"></a>
+                <a class="navbar-brand" href="#!"><img width="80px" src="../assets/img/Logo CoCreando.png" alt="Logo Company"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -27,6 +30,7 @@
                         <li class="nav-item"><a class="nav-link" aria-current="page" href="services.html">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" aria-current="page" href="exp.html">Experiencias</a></li>
                         <li class="nav-item"><a class="nav-link" aria-current="page" href="events.html">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="gifts.html">Regalos</a></li>
                     </ul>
                     <!-- User-->
                     <div class="btn-group">
@@ -51,7 +55,10 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 ">
 
-                    <div class="col-md-4">                              
+                    <div class="col-md-4">
+                        <div>
+                            <img class="shadow" style="clip-path: circle(50% at 50% 50%);" width="200px" src="../assets/img/demo-user.png" alt="Mi Foto">
+                        </div>                           
                         <h1>Usuario Demo</h1>
                         <h3>Saldo: $45,350 mxn</h3>
                         <button type="button" class="btn btn-success">
@@ -79,19 +86,22 @@
                     </div>
 
                     <div class="col-md-8" id="compras">
+                    <div>
                         <h2>Historial de Compras</h2>
                         <hr>
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
                                     <th>#</th>
+                                    <th>Fecha</th>
                                     <th>Nombre - Descripción</th>
                                     <th>Estatus</th>
                                     <th>Proveedor</th>
-                                    <th></th>
+                                    <th>Más</th>
                                 </tr>
                                 <tr>
                                 <th>1</th>
+                                <td>01-01-25</td>
                                 <td>Jabón en Barra Neutro, paquete de 12 piezas</td>
                                 <td class="table-success" >Entregado</td>
                                 <td>Jabones SA</td>
@@ -99,6 +109,7 @@
                                 </tr>
                                  <tr>
                                 <th>2</th>
+                                <td>01-02-25</td>
                                 <td>Chocolates Navideños, paquete de 24 piezas</td>
                                 <td class="table-success" >Entregado</td>
                                 <td>Chocolates SA</td>
@@ -106,6 +117,7 @@
                                 </tr>
                                  <tr>
                                 <th>3</th>
+                                <td>01-03-25</td>
                                 <td>Sillón ergonómico, 1pz</td>
                                 <td class="table-dark" >Cancelado</td>
                                 <td>Sillones SA</td>
@@ -113,6 +125,7 @@
                                 </tr>
                                  <tr>
                                 <th>4</th>
+                                <td>01-05-25</td>
                                 <td>Mole de Oaxaca, 30 kg</td>
                                 <td class="table-primary" >Enviado</td>
                                 <td>Jabones SA</td>
@@ -122,7 +135,22 @@
                             </tbody>
                         </table>
                     </div>
-                       
+                    <br>
+                    <div>
+                        <h2>Impacto</h2>
+                        <hr>
+                        <p>Con tus Compras has ayudado a: <strong>30 familias</strong> </p>
+                        <div class="card mb-4">
+                                    <div class="card-header">
+                                        <svg class="svg-inline--fa fa-chart-bar me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-bar" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32zm96 96c0-17.7 14.3-32 32-32l192 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32zm32 64H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 96H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg><!-- <i class="fas fa-chart-bar me-1"></i> Font Awesome fontawesome.com -->
+                                        Familias apoyadas por compras directas
+                                    </div>
+                                    <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="myBarChart" width="457" height="228" style="display: block; height: 183px; width: 366px;" class="chartjs-render-monitor"></canvas></div>
+                                    <div class="card-footer small text-muted">Actualizado el 21-09-2025</div>
+                                </div>
+                    </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -141,9 +169,10 @@
                         </div>
                     </div>
                 </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../js/chart-bar-demo.js"></script>
     </body>
 </html>
