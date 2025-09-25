@@ -9,7 +9,7 @@ function login(identifiersupplier, password){
   }
 }
 
-function logout(){
+function logoutsupplier(){
   localStorage.removeItem("sessionUser");
   window.location.href = "./login-supplier.html";
 }

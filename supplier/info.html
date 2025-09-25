@@ -68,102 +68,94 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Administrador Uno
+                        Proveedor
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid p-4">
-                        <h2 class="mt-4 mb-4"> Tablero de Control</h2>
+                        <h2 class="mt-4 mb-4"> Información Empresaria</h2>
                         
-                        <div class="row justify-content-evenly ">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card text-white bg-primary bg-gradient shadow mb-4 text-center">
-                                    <div class="card-header fs-5" ><i class="fas fa-cart-shopping"></i> Artículos Vendidos</div>
-                                    <div class="card-body fs-5">
-                                        <p href="#"><strong>25</strong> Artículos </p>
-                                    </div>
-                                    <div class="card-footer" >
-                                        <i class=" text-light" >Artículos vendidos en el último mes</i>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success bg-gradient text-white shadow mb-4 text-center">
-                                    <div class="card-header fs-5" ><i class="fa-solid fa-money-check-dollar"></i> Venta promedio</div>
-                                    <div class="card-body fs-5">
-                                        <p href="#"><strong>$875</strong> Ticket promedio de venta</p>
-                                    </div>
-                                    <div class="card-footer" >
-                                        <i class=" text-light" >Promedio de ventas al mes</i>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Cobertura Dinámica
-                                    </div>
-                                    <div class="card-body">
-                                        <iframe height="500vh" width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15023943.123684593!2d-110.27741503159244!3d23.17184739677516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1758486535623!5m2!1ses-419!2smx" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Productos más Comprados en los últimos 60 días
-                                    </div>
-                                    <div class="card-body">
-                                    <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                    <th>Nombre</th>
-                                    <th>Total Comprado</th>
-                                    <th>Impacto</th>
-                                </tr>
-                                <tr>
-                                
-                                <td>Jabón en Barra Neutro</td>
-                                <td>$130,540</td>
-                                <td>50 Familias</td>
-                                </tr>
-                                 <tr>
-                                
-                                <td>Chocolates Navideños</td>
-                                <td>$78,980</td>
-                                <td>121 Familias</td>
-                                </tr>
-                                 <tr>
-                                
-                                <td>Sillón ergonómico</td>
-                                <td>$45,350</td>
-                                <td>30 Familias</td>
-                                </tr>
-                                <tr>
-                                <td>Mole de Oaxaca</td>
-                                <td>$269,875</td>
-                                <td>475 Familias</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td><b>$524,745</b></td>
-                                    <td><b>676 Familias</b></td>
-                                </tr>
+                        <!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario Empresa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
 
-                            </tbody>
-                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  <div class="container py-4 bg-light rounded shadow ">
+
+    <form action="#" method="post" enctype="multipart/form-data" class="row g-3">
+
+      <!-- Nombre de la empresa -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Nombre de la empresa</b></label>
+        <input type="text" class="form-control" name="nombre_empresa" placeholder="Ej. Tech Solutions">
+      </div>
+
+      <!-- Correo de contacto -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Correo de contacto</b></label>
+        <input type="email" class="form-control" name="correo_contacto" placeholder="empresa@correo.com">
+      </div>
+
+      <!-- Logo -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Logo de la empresa</b></label>
+        <input type="file" class="form-control" name="logo" accept="image/*">
+      </div>
+
+      <!-- Descripción corta -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Descripción corta</b></label>
+        <textarea class="form-control" name="descripcion_corta" rows="2" placeholder="Breve descripción de la empresa"></textarea>
+      </div>
+
+      <!-- Dirección + Mapa -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Dirección</b></label>
+        <input type="text" class="form-control mb-2" name="direccion" placeholder="Calle, número, colonia, ciudad...">
+        <!-- Iframe de Google Maps -->
+        <div class="border rounded text-center">
+          <iframe class="d-flex" width="100%" height="400px" src="https://maps.google.com/maps?q=México&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                   style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Redes Sociales</b></label>
+        <input type="url" class="form-control mb-2" name="instagram" placeholder="Instagram (URL)">
+        <input type="url" class="form-control mb-2" name="facebook" placeholder="Facebook (URL)">
+        <input type="url" class="form-control mb-2" name="linkedin" placeholder="LinkedIn (URL)">
+        <input type="url" class="form-control mb-2" name="x" placeholder="X (Twitter) (URL)">
+        <input type="url" class="form-control mb-2" name="tiktok" placeholder="TikTok (URL)">
+        <input type="url" class="form-control mb-2" name="otras" placeholder="Otras redes (URL)">
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="col-md-6">
+        <label class="form-label"><b>WhatsApp</b></label>
+        <input type="tel" class="form-control" name="whatsapp" placeholder="Ej. +52 55 1234 5678">
+      </div>
+
+      <!-- Links extras -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Enlaces extras</b></label>
+        <textarea class="form-control" name="links_extras" rows="2" placeholder="Ej. enlace a documentos, landing page, etc."></textarea>
+      </div>
+
+      <!-- Botón -->
+      <div class="col-12 text-end">
+        <button onclick="window.alert('Datos Cargados')" class="btn btn-primary" >Guardar</button>
+      </div>
+    </form>
+  </div>
+
                     </div>
                 </main>
                  <!--Footer-->
