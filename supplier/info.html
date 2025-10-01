@@ -109,14 +109,48 @@
         <input type="file" class="form-control" name="logo" accept="image/*">
       </div>
 
+      <!-- Logo -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Foto de Perfil</b></label>
+        <input type="file" class="form-control" name="foto" accept="image/*">
+      </div>
+
       <!-- Descripción corta -->
       <div class="col-md-6">
         <label class="form-label"><b>Descripción corta</b></label>
         <textarea class="form-control" name="descripcion_corta" rows="2" placeholder="Breve descripción de la empresa"></textarea>
       </div>
 
-      <!-- Dirección + Mapa -->
+      <!-- Empleos -->
       <div class="col-md-6">
+        <label class="form-label"><b>Personas empleadas</b></label>
+        <input class="form-control" name="Empleos" type="number"></input>
+      </div>
+      <!-- Socios -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Personas Socias (Incluyéndote)</b></label>
+        <input class="form-control" name="socios" type="number"></input>
+      </div>
+      <!-- familias -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Familias involucradas</b></label>
+        <input class="form-control" name="familias" type="number"></input>
+      </div>
+      <!-- Proveedores -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Pequeños proveedores locales</b></label>
+        <input class="form-control" name="proveedores" type="number"></input>
+      </div>
+      <!-- Personas especiales -->
+      <div class="col-md-6">
+        <label class="form-label"><b>Personas empleadas de características especiales (Lengua indígena, grupo originario, etc.)</b></label>
+        <input  name="especiales" type="radio">Si</input> <input  name="especiales" type="radio">No</input>
+        <label for="cuales">¿Cuáles?</label>
+        <input name="cuales" class="form-control" type="text">
+      </div>
+
+      <!-- Dirección + Mapa -->
+      <div class="col-md-12">
         <label class="form-label"><b>Dirección</b></label>
         <input type="text" class="form-control mb-2" name="direccion" placeholder="Calle, número, colonia, ciudad...">
         <!-- Iframe de Google Maps -->
