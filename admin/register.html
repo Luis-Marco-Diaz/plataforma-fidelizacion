@@ -17,7 +17,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="">Administrador Uno</a>
+            <a class="navbar-brand ps-3" href="">Administrador</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -51,7 +51,7 @@
                                 Regalos / Beneficios
                             </a>
                             <div class="sb-sidenav-menu-heading text-light">Usuarios</div>
-                            <a class="nav-link collapsed" href="register.html"><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>Nuevo Usario</a>
+                            <a class="nav-link collapsed active" href="register.html"><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>Nuevo Usuario</a>
                             <a class="nav-link collapsed" href="list.html"><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>Lista de Usuarios</a>
                            
                             <div class="sb-sidenav-menu-heading text-light">Reportes</div>
@@ -100,16 +100,16 @@
                             <tr>
                             <th class="align-middle">Id de Empleado</th>
                             <td>
-                                <input type="number" name="saldo" class="form-control" placeholder="Saldo disponible para realizar compras, sólo colocar números, sin símbolos, sin puntos, sin comas" required>
-                                <div class="invalid-feedback">Colocar la Cantidad de Saldo disponible para realizar compras</div>
+                                <input type="text" name="id_empleado" class="form-control" placeholder="ID12345" required>
+                                <div class="invalid-feedback">Id de empleado requerido.</div>
                             </td>
                             </tr>
 
                             <tr>
                             <th class="align-middle">Asignación de Saldo</th>
                             <td>
-                                <input type="text" name="id_empleado" class="form-control" placeholder="ID12345" required>
-                                <div class="invalid-feedback">Id de empleado requerido.</div>
+                                <input type="number" name="saldo" class="form-control" placeholder="Saldo disponible para realizar compras, sólo colocar números, sin símbolos, sin puntos, sin comas" required>
+                                <div class="invalid-feedback">Colocar la Cantidad de Saldo disponible para realizar compras</div>
                             </td>
                             </tr>
 

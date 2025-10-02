@@ -118,7 +118,7 @@
       <!-- Descripción corta -->
       <div class="col-md-6">
         <label class="form-label"><b>Descripción corta</b></label>
-        <textarea class="form-control" name="descripcion_corta" rows="2" placeholder="Breve descripción de la empresa"></textarea>
+        <textarea style="resize: none;" class="form-control" name="descripcion_corta" rows="5" maxlength="1000"  placeholder="Breve descripción de la empresa"></textarea>
       </div>
 
       <!-- Empleos -->
@@ -143,10 +143,12 @@
       </div>
       <!-- Personas especiales -->
       <div class="col-md-6">
-        <label class="form-label"><b>Personas empleadas de características especiales (Lengua indígena, grupo originario, etc.)</b></label>
-        <input  name="especiales" type="radio">Si</input> <input  name="especiales" type="radio">No</input>
-        <label for="cuales">¿Cuáles?</label>
-        <input name="cuales" class="form-control" type="text">
+        <label class="form-label"><b>Personas empleadas de características especiales</b></label>
+        <br>
+        <i class="text-muted mb-4" ><strong>Estas características pueden ser:</strong> Hablan alguna lengua indígena, Pertenecen a un grupo originario, Discapacidad auditiva, visual, motriz, intelectual, del habla, No sabe leer o escribir, madres solteras, padres solteros, u otra característica especial.</i>
+        <input class="form-control" name="especiales"  type="number">
+        <label for="cuales">¿Cuáles?, ¿Cuántas Mujeres y Cuántos Hombres?</label>
+        <input name="cuales" class="form-control" type="text" placeholder="2 Madres Solteras y 3 Hombres que pertenecen a un grupo originario..." >
       </div>
 
       <!-- Dirección + Mapa -->
