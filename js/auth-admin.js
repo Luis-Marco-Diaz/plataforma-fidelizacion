@@ -11,5 +11,5 @@ function login(identifieradmin, password){
 
 function logoutadmin(){
   localStorage.removeItem("sessionUser");
-  window.location.href = "./login-admin.html";
+  window.location.href = "../index.html";
 }

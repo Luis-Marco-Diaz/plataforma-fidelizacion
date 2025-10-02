@@ -11,5 +11,5 @@ function login(identifiersupplier, password){
 
 function logoutsupplier(){
   localStorage.removeItem("sessionUser");
-  window.location.href = "./login-supplier.html";
+  window.location.href = "../index.html";
 }
